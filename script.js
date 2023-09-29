@@ -1,14 +1,12 @@
-const token_containers = document.getElementsByClassName("columnBlocks");
 const createBtn = document.getElementsByClassName("createBtn");
 const addIssueBtn = document.getElementsByClassName("addIssue");
-console.log(addIssueBtn);
-for(let i=0; i<token_containers.length; i++){
-    token_containers[i].addEventListener("dragover", handleDragOver)
-}
+// console.log(addIssueBtn);
+
+
 for(let i=0; i<createBtn.length; i++){
     // createBtn[i] is a single button
     createBtn[i].addEventListener("click", ShowTextAreaDiv);
-    addIssueBtn[i].addEventListener("click", createIssueCard)
+    addIssueBtn[i].addEventListener("click", createIssueCard);
 }
 
 function ShowTextAreaDiv(event){
@@ -25,7 +23,8 @@ function createIssueCard(event){
     let issueText = currentTextArea.value;
     const card = document.createElement("div");
     card.classList.add("card");
-    card.draggable = "true";
+    card.draggable = true;
+    card.style.opacity = 1;
     card.innerHTML = `
         <div>${issueText}</div>
         <button onclick="handleDelete(this)" ><span class="material-symbols-outlined">
@@ -38,7 +37,7 @@ function createIssueCard(event){
 
     // Add the dragstart event listener to the created card
     card.addEventListener("dragstart", handleDragStart);
-    card.addEventListener("dragend", handleDragEnd);
+    // card.addEventListener("dragend", handleDragEnd);
 
 }
 
@@ -46,19 +45,11 @@ function handleDelete(delBtnRef){
     delBtnRef.parentNode.remove();
 }
 
-function handleDragStart(event){
-    // console.log(event.target);
-    const draggedCard = event.target;
-    console.log("drag started");
-}
 
-function handleDragEnd(event){
-    const draggedCard = event.target;
-    console.log("drag ended");
 
-}
+// function handleDragEnd(event){
+//     const draggedCard = event.target;
+//     console.log("drag ended");
 
-function handleDragOver(event){
-    event.preventDefault();
-    console.log("dragged over");
-}
+// }
+

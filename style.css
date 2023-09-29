@@ -1,92 +1,103 @@
-*{
-    margin: 0px;
-    padding: 0px;
+* {
+  margin: 0px;
+  padding: 0px;
+}
+:root {
+  --primary: rgba(255, 255, 255, 1);
+  --secondary: rgba(244, 245, 247, 1);
+  --bodybackground: rgba(205, 225, 248, 1);
+  --textColor: rgba(103, 116, 139, 1);
+  --hoverclr: rgba(181, 182, 186, 1);
 }
 
-#main_workspace{
-    padding: 35px;
+#main_workspace {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
     gap: 25px;
+  padding: 35px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
-#main_workspace h4{
-    border-bottom: 1px solid grey;
-    padding: 3px 7px;
-    margin-bottom: 5px;
+#main_workspace h4 {
+  border-bottom: 1px solid;
+  border-color: var(--textColor);
+  padding: 3px 7px;
+  margin-bottom: 5px;
 }
-.columnBlocks{
+.columnBlocks {
     padding: 15px 10px;
-    padding-bottom: 23px;
-    background-color: #f4f5f7;
-    border: 1px solid red;
-    border-radius: 10px;
-    /* min-width: 275px; */
     min-width: 350px;
-    height: fit-content;
+    background-color: var(--secondary);
+    border-radius: 10px;
     min-height: 200px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    padding-bottom: 25px;
     gap: 5px;
+  /* justify-content: flex-start; */
 }
 
-.columnBlocks:hover .createBtn{
-    display: inline-block;
+.columnBlocks:hover .createBtn {
+  display: inline-block;
 }
-.createBtn{
-    display: none;
-    padding: 5px 10px;
-    font-size: 14px;
-    border-radius: 12px;
-    background-color: transparent;
-    border: none;
+.createBtn {
+  display: none;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 12px;
+  border: none;
 }
-.createBtn:hover{
-    background-color: white;
+.createBtn:hover {
+  background-color: var(--hoverclr);
 }
-.issueCard{
-    display: flex;
+.issueCard {
+  display: flex;
 }
-.issueCardText{
-    flex-grow: 1;
+.issueCardText {
+  flex-grow: 1;
 }
 
-.card{
-    position: relative;
-    margin: 3px 0px;
+.card {
+    background-color: var(--primary);
     padding: 8px 10px;
-    min-width: 250px;
-    min-height: 55px;
-    border-radius: 7px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     box-shadow: 1px 1px 2px gray;
-    background-color: white ;
+    border-radius: 7px;
+  position: relative;
+  margin: 3px 0px;
+  min-width: 250px;
+  min-height: 55px;
+  align-items: center;
 }
 
-.card>div{
-    width: 200px;
-    height: fit-content;
+.card > div {
+  width: 200px;
+  height: fit-content;
 }
 
 /* delete button */
-.card > button{
-    position: absolute;
-    right: 7px;
-    top: 7px;
-    padding: 2px 5px;
-    border-radius: 5px;
-    border: none;
+.card > button {
+  position: absolute;
+  right: 7px;
+  top: 7px;
+  padding: 2px 5px;
+  border-radius: 5px;
+  border: none;
 }
 
-.hide{
-    display: none;
+.card-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 4px;
+  gap: 10px;
 }
-.dontShow{
-    visibility: hidden;
+
+.hide {
+  display: none;
 }
-.show{
-    display: block;
+.dontShow {
+  visibility: hidden;
+}
+.show {
+  display: block;
 }
